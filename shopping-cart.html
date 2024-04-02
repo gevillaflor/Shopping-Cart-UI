@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart UI</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
+</head>
+<body>
+    <div class="CartContainer">
+        <div class="Header">
+            <h3 class="Heading">Shopping Cart</h3>
+            <h5 class="Action">Remove all</h5>
+        </div>
+
+        <!-- Item 1: Apple Juice -->
+        <div class="Cart-Items">
+            <!-- ... (same as your original code) ... -->
+            <div class="counter">
+                <div class="btn" id="addApple">+</div>
+                <div class="count" id="displayApple">0</div>
+                <div class="btn" id="removeApple">-</div>
+            </div>
+            <!-- ... (same as your original code) ... -->
+        </div>
+
+        <!-- Item 2: Grapes Juice -->
+        <div class="Cart-Items">
+            <!-- ... (same as your original code) ... -->
+            <div class="counter">
+                <div class="btn" id="addGrapes">+</div>
+                <div class="count" id="displayGrapes">0</div>
+                <div class="btn" id="removeGrapes">-</div>
+            </div>
+            <!-- ... (same as your original code) ... -->
+        </div>
+    </div>
+
+    <script>
+        // Initialize counters and prices
+        let itemCountApple = 0;
+        let itemCountGrapes = 0;
+        const pricePerItem = 10; // Assume each item costs $10
+
+        // Event listeners for Apple Juice
+        document.getElementById('addApple').addEventListener('click', () => {
+            itemCountApple++;
+            updateDisplay('Apple');
+        });
+        document.getElementById('removeApple').addEventListener('click', () => {
+            if (itemCountApple > 0) {
+                itemCountApple--;
+                updateDisplay('Apple');
+            }
+        });
+
+        // Event listeners for Grapes Juice
+        document.getElementById('addGrapes').addEventListener('click', () => {
+            itemCountGrapes++;
+            updateDisplay('Grapes');
+        });
+        document.getElementById('removeGrapes').addEventListener('click', () => {
+            if (itemCountGrapes > 0) {
+                itemCountGrapes--;
+                updateDisplay('Grapes');
+            }
+        });
+
+        // Update display for each item
+        function updateDisplay(itemName) {
+            document.getElementById(`display${itemName}`).textContent = itemCountApple + itemCountGrapes;
+            const totalPrice = (itemCountApple + itemCountGrapes) * pricePerItem;
+            document.getElementById(`price${itemName}`).textContent = totalPrice.toFixed(2);
+        }
+    </script>
+</body>
+</html>

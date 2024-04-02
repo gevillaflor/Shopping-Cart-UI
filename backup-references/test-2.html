@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <ul id="itemList"></ul>
+    <p>Total Items: <span id="totalItems">0</span></p>
+    <p>Total Value: <span id="totalValue">$0</span></p>
+    <button onclick="addItem('Item A', 15)">Add Item A ($15)</button>
+    <button onclick="addItem('Item B', 20)">Add Item B ($20)</button>
+    <button onclick="addItem('Item C', 12)">Add Item C ($12)</button>
+
+    <script>
+        let itemCount = 0;
+        let totalValue = 0;
+
+        function addItem(itemName, itemPrice) {
+            itemCount++;
+            totalValue += itemPrice;
+
+            const listItem = document.createElement('li');
+            listItem.textContent = `${itemName} ($${itemPrice})`;
+            document.getElementById('itemList').appendChild(listItem);
+
+            updateTotalItems();
+            updateTotalValue();
+        }
+
+        function updateTotalItems() {
+            document.getElementById('totalItems').textContent = itemCount;
+        }
+
+        function updateTotalValue() {
+            document.getElementById('totalValue').textContent = `$${totalValue}`;
+        }
+    </script>
+</body>
+</html>

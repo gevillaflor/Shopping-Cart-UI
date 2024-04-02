@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Shopping Cart UI</title>
+	<title>Juice Ko Po</title>
 	<link rel="stylesheet" type="text/css" href="./style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
 </head>
@@ -9,7 +9,6 @@
    <div class="CartContainer">
    	   <div class="Header">
    	   	<h3 class="Heading">Shopping Cart</h3>
-   	   	<h5 class="Action">Remove all</h5>
    	   </div>
 
    	   <div class="Cart-Items">
@@ -18,8 +17,7 @@
    	   	  </div>
    	   	  <div class="about">
    	   	  	<h1 class="title">Apple Juice</h1>
-   	   	  	<h3 class="subtitle">250ml</h3>
-   	   	  	<img src="images/veg.png" style={{ height="30px" }}/>
+   	   	  	<h3 class="subtitle">250ml - PHP 200.00</h3>
    	   	  </div>
    	   	  <div class="counter">
    	   	  	<div class="btn" id="addApple">+</div>
@@ -28,8 +26,6 @@
    	   	  </div>
    	   	  <div class="prices">
    	   	  	<div class="amount">PHP <span id="price">0.00</span></div>
-   	   	  	<div class="save"><u>Save for later</u></div>
-   	   	  	<div class="remove"><u>Remove</u></div>
    	   	  </div>
    	   </div>
 
@@ -39,8 +35,7 @@
    	   	  </div>
    	   	  <div class="about">
    	   	  	<h1 class="title">Grapes Juice</h1>
-   	   	  	<h3 class="subtitle">250ml</h3>
-   	   	  	<img src="images/veg.png" style={{ height="30px" }}/>
+   	   	  	<h3 class="subtitle">250ml - PHP 175.00</h3>
    	   	  </div>
    	   	  <div class="counter">
 			<div class="btn" id="addGrape">+</div>
@@ -49,42 +44,37 @@
    	   	  </div>
    	   	  <div class="prices">
 			<div class="amount">PHP <span id="priceGrape">0.00</span></div>
-   	   	  	<div class="save"><u>Save for later</u></div>
-   	   	  	<div class="remove"><u>Remove</u></div>
    	   	  </div>
    	   </div>
 
-		<!-- <div class="Cart-Items pad">
+		<div class="Cart-Items pad">
 			<div class="image-box">
 				<img src="images/orange.png" style={{ height="120px" }} />
 			</div>
 			<div class="about">
 				<h1 class="title">Orange Juice</h1>
-				<h3 class="subtitle">250ml</h3>
-				<img src="images/veg.png" style={{ height="30px" }}/>
+				<h3 class="subtitle">250ml - PHP 200.00</h3>
 			</div>
 			<div class="counter">
-				<div class="btn">+</div>
-				<div class="count">1</div>
-				<div class="btn">-</div>
+				<div class="btn" id="addOrange">+</div>
+			<div class="count" span id="displayOrange">0</div>
+   	   	  	<div class="btn" id="removeOrange">-</div>
 			</div>
 			<div class="prices">
-				<div class="amount">$3.19</div>
-				<div class="save"><u>Save for later</u></div>
-				<div class="remove"><u>Remove</u></div>
+				<div class="amount">PHP <span id="priceOrange">0.00</span></div>
 			</div>
-	  </div> -->
+	  </div>
 
    	 <hr> 
    	 <div class="checkout">
    	 <div class="total">
    	 	<div>
-   	 		<div class="Subtotal">Sub-Total</div>
-   	 		<div class="items">2 items</div>
+			<span id="discount"></spans>
+   	 		<div class="Subtotal">Total</div>
    	 	</div>
    	 	<div class="total-amount">PHP <span id="total">0.00</span></div>
    	 </div>
-   	 <button class="button">Checkout</button></div>
+   	 <!-- <button class="button">Checkout</button></div> -->
    </div>
 </body>
 <script src="shopping-cart.js"></script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <div>
+        <h2>Category A</h2>
+        <button id="incrementButtonA">Add Item A</button>
+        <p>Total Items (Category A): <span id="totalItemsA">0</span></p>
+    </div>
+    <div>
+        <h2>Category B</h2>
+        <button id="incrementButtonB">Add Item B</button>
+        <p>Total Items (Category B): <span id="totalItemsB">0</span></p>
+    </div>
+
+    <script>
+        let itemCountA = 0;
+        let itemCountB = 0;
+
+        function addItem(category) {
+            if (category === 'A') {
+                itemCountA++;
+                document.getElementById('totalItemsA').textContent = itemCountA;
+            } else if (category === 'B') {
+                itemCountB++;
+                document.getElementById('totalItemsB').textContent = itemCountB;
+            }
+        }
+
+        // Add event listeners for each button
+        document.getElementById('incrementButtonA').addEventListener('click', () => addItem('A'));
+        document.getElementById('incrementButtonB').addEventListener('click', () => addItem('B'));
+    </script>
+</body>
+</html>

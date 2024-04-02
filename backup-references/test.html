@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Counter</title>
+</head>
+<body>
+    <h1>Item Counter</h1>
+    <p>Click the button to add an item:</p>
+    <button id="incrementButton">Add Item</button>
+    <p>Total Price: <span id="totalPrice">$0</span></p>
+
+    <script>
+        // Initialize counter and total price
+        let itemCount = 0;
+        let totalPrice = 0;
+
+        // Get the button element
+        const incrementButton = document.getElementById('incrementButton');
+
+        // Add click event listener
+        incrementButton.addEventListener('click', () => {
+            // Increment counter
+            itemCount++;
+
+            // Calculate item price (e.g., $10 per item)
+            const itemPrice = 10;
+
+            // Update total price
+            totalPrice += itemPrice;
+
+            // Display updated total price
+            document.getElementById('totalPrice').textContent = `$${totalPrice}`;
+        });
+    </script>
+</body>
+</html>
