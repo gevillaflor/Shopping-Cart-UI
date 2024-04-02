@@ -1,29 +1,27 @@
-//alert("hello world");
+alert("hello");
 
-const counter = createCounter();
-const button = document.getElementById("add");
-const button2 = document.getElementById("remove");
-
-let disp = document.getElementById("display");
+let counterDisplayElem = document.getElementById('display');
+let counterMinusElem = document.getElementById('remove');
+let counterPlusElem = document.getElementById('add');
+let priceDisplayElem = document.getElementById('price');
+let appleValue = 100.00;
+// let orangeValue = 125.00;
+// let grapeValue = 150.00;
 let count = 0;
 
- 
-function createCounter() {
-  return function () {
+updateDisplay();
+
+counterPlusElem.addEventListener("click",()=>{
     count++;
-    return count;
-  };
-}
+    updateDisplay();
+}) ;
 
-function removeCounter() {
-  count--;
-  return count;
-}
-
-button.addEventListener("click", () => {
-  disp.innerHTML = itemCounter();
+counterMinusElem.addEventListener("click",()=>{
+    count--;
+    updateDisplay();
 });
 
-button2.addEventListener("click", () => {
-  disp.innerHTML = removeCounter();
-});
+function updateDisplay(){
+    counterDisplayElem.innerHTML = count;
+    priceDisplayElem.innerHTML = (appleValue * count).toFixed(2);
+};
