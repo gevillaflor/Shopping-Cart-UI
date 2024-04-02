@@ -25,7 +25,7 @@ let grapesCount = 0;
 let grapesItemPrice = 175.00;
 
 let orangeCount = 0;
-let orangeItemPrice = 200.00;
+let orangeItemPrice = 100.00;
 
 //Set initial price for discount and get element for discount from the DOM
 let discount = 0.00;
